@@ -14,3 +14,4 @@ Datasets/combined_split_manifest.json
 .env
 .env.*
 !.env.example
+.venv.*
