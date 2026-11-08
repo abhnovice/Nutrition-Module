@@ -1,0 +1,80 @@
+{
+  "schema_version": 3,
+  "training_images": 3087,
+  "classes": 81,
+  "training_top1_accuracy": 0.9977324263038548,
+  "validation_trials": [
+    {
+      "kind": "deep_svc",
+      "C": 0.3,
+      "images": 360,
+      "top1_accuracy": 0.4861111111111111,
+      "top3_accuracy": 0.7138888888888889
+    },
+    {
+      "kind": "deep_svc",
+      "C": 1,
+      "images": 360,
+      "top1_accuracy": 0.6138888888888889,
+      "top3_accuracy": 0.775
+    },
+    {
+      "kind": "deep_svc",
+      "C": 3,
+      "images": 360,
+      "top1_accuracy": 0.6583333333333333,
+      "top3_accuracy": 0.7888888888888889
+    },
+    {
+      "kind": "deep_svc",
+      "C": 10,
+      "images": 360,
+      "top1_accuracy": 0.6527777777777778,
+      "top3_accuracy": 0.7916666666666666
+    }
+  ],
+  "selected": {
+    "kind": "deep_svc",
+    "C": 3,
+    "images": 360,
+    "top1_accuracy": 0.6583333333333333,
+    "top3_accuracy": 0.7888888888888889
+  },
+  "test": {
+    "images": 379,
+    "top1_accuracy": 0.6411609498680739,
+    "top3_accuracy": 0.8390501319261213
+  },
+  "rejection": {
+    "correctness_threshold": 0.5,
+    "distance_limit": 1.320988978583512,
+    "policy": "Correctness floor 50%; validation-selected threshold: >=70% empirical accepted accuracy, >=15 accepted photos; reject if no threshold qualifies. Also require center-crop agreement and training nearest-neighbor distance <=99th percentile.",
+    "calibration": "Logistic top-1 correctness estimator fitted to training-only 3-fold out-of-fold predictions. Does not change dish ranking.",
+    "training_oof_top1_accuracy": 0.5717525105280208,
+    "validation_correctness_brier": 0.22643385371010522,
+    "validation": {
+      "images": 360,
+      "accepted_images": 234,
+      "coverage": 0.65,
+      "accepted_top1_accuracy": 0.7991452991452992,
+      "accepted_errors": 47,
+      "rejected_images": 126
+    },
+    "test": {
+      "images": 379,
+      "accepted_images": 241,
+      "coverage": 0.6358839050131926,
+      "accepted_top1_accuracy": 0.8049792531120332,
+      "accepted_errors": 47,
+      "rejected_images": 138
+    },
+    "limitations": "Validation contains known dish classes only. This is not validated out-of-distribution detection and cannot identify unseen plain milk."
+  },
+  "selection": "Training-only 3-fold correctness calibration; C and rejection threshold selected on validation; test evaluated after freezing. Test set has been reused across previous development rounds, so it is not a fresh blind benchmark.",
+  "encoder": {
+    "name": "MobileNetV2 ImageNet frozen encoder",
+    "sha256": "c0c3f76d93fa3fd6580652a45618618a220fced18babf65774ed169de0432ad5",
+    "dimensions": 1280
+  },
+  "limitations": "Unknown classes such as plain milk are absent. All dish profiles require user confirmation."
+}

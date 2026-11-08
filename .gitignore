@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+model.npz
+model_baseline.npz
+model.pending.npz
+model_before_refinement.npz
+mobilenetv2-12.onnx
+model_before_raw_food.npz
+.hf_cache/
+Datasets/raw-food-recognition/
+Datasets/combined_features*.npz
+Datasets/combined_split_manifest.json
+
+.env
+.env.*
+!.env.example

@@ -1,0 +1,3138 @@
+{
+  "schema_version": 4,
+  "library_versions": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "onnxruntime": "1.31.1",
+    "onnx": "1.23.2",
+    "datasets": "5.1.0",
+    "Pillow": "12.3.0"
+  },
+  "training_images": 11176,
+  "classes": 169,
+  "baseline": {
+    "dish_test": {
+      "images": 379,
+      "top1_accuracy": 0.6411609498680739,
+      "top3_accuracy": 0.8390501319261213
+    },
+    "untrained_milk_predictions": {
+      "chak hao kheer": 16,
+      "sandesh": 12,
+      "lassi": 3,
+      "bandar laddu": 1,
+      "pootharekulu": 2,
+      "lyangcha": 2,
+      "cham cham": 1
+    }
+  },
+  "raw_classes": [
+    "amaranth",
+    "apple",
+    "apple juice",
+    "asparagus",
+    "avocado",
+    "banana",
+    "beetroot",
+    "bell pepper",
+    "bitter gourd",
+    "blueberry",
+    "blueberry soy yogurt",
+    "blueberry soyghurt",
+    "bottle gourd",
+    "broccoli",
+    "cabbage",
+    "cantaloupe",
+    "carrot",
+    "cauliflower",
+    "chili pepper",
+    "coconut",
+    "corn",
+    "cucumber",
+    "dragon fruit",
+    "eggplant",
+    "fig",
+    "garlic",
+    "ginger",
+    "golden grapefruit juice",
+    "grapefruit juice",
+    "grapes",
+    "jalapeno",
+    "kiwi",
+    "leek",
+    "lemon",
+    "lettuce",
+    "lime",
+    "mandarin juice",
+    "mango",
+    "melon",
+    "milk",
+    "mixed juice",
+    "mushroom",
+    "natural low fat yogurt",
+    "natural yogurt",
+    "nectarine",
+    "oat milk",
+    "oat yogurt",
+    "oatghurt",
+    "okra",
+    "onion",
+    "orange",
+    "orange juice",
+    "orange red grapefruit juice",
+    "papaya",
+    "passion fruit",
+    "peach",
+    "pear",
+    "peas",
+    "pineapple",
+    "plum",
+    "pomegranate",
+    "potato",
+    "pumpkin",
+    "radish",
+    "raspberry",
+    "red grapefruit",
+    "red grapefruit juice",
+    "ridge gourd",
+    "satsuma",
+    "sour cream",
+    "sour milk",
+    "soy milk",
+    "soybean",
+    "soyghurt",
+    "spinach",
+    "spiny gourd",
+    "sponge gourd",
+    "strawberry",
+    "strawberry yogurt",
+    "sweet potato",
+    "tomato",
+    "turnip",
+    "vanilla soy yogurt",
+    "vanilla soyghurt",
+    "vanilla yogurt",
+    "watermelon",
+    "yogurt",
+    "zucchini"
+  ],
+  "dish_classes": [
+    "adhirasam",
+    "aloo gobi",
+    "aloo matar",
+    "aloo methi",
+    "aloo shimla mirch",
+    "aloo tikki",
+    "anarsa",
+    "appe",
+    "ariselu",
+    "baati",
+    "bandar laddu",
+    "basundi",
+    "bhatura",
+    "bhindi masala",
+    "biryani",
+    "boondi",
+    "butter chicken",
+    "chak hao kheer",
+    "cham cham",
+    "chana masala",
+    "chapati",
+    "chicken rezala",
+    "chicken tikka",
+    "chicken tikka masala",
+    "chikki",
+    "churma",
+    "daal",
+    "daal puri",
+    "dal makhani",
+    "dal tadka",
+    "dharwad pedha",
+    "doodhpak",
+    "double ka meetha",
+    "dum aloo",
+    "gajar halwa",
+    "gavvalu",
+    "ghevar",
+    "gujia",
+    "gulab jamun",
+    "imarti",
+    "jalebi",
+    "kachori",
+    "kadai paneer",
+    "kadhi pakoda",
+    "kakinada khaja",
+    "kalakand",
+    "karela bharta",
+    "kheer",
+    "kofta",
+    "lassi",
+    "ledikeni",
+    "litti chokha",
+    "lyangcha",
+    "maach jhol",
+    "makki di roti sarso ka saag",
+    "malpua",
+    "misi roti",
+    "misti doi",
+    "modak",
+    "mysore pak",
+    "naan",
+    "navrattan korma",
+    "palak paneer",
+    "paneer butter masala",
+    "phirni",
+    "pithe",
+    "poha",
+    "poornalu",
+    "pootharekulu",
+    "qubani ka meetha",
+    "rabri",
+    "ras malai",
+    "rasgulla",
+    "sandesh",
+    "shankarpali",
+    "sheera",
+    "shrikhand",
+    "soan papdi",
+    "sohan halwa",
+    "sutar feni",
+    "unni appam"
+  ],
+  "data": {
+    "source_repository": "ibrahimdaud/raw-food-recognition",
+    "source_revision": "e03922c47df5c8015616e3c88536883a1aacd10a",
+    "source_splits": {
+      "train": 10004,
+      "validation": 2501
+    },
+    "source_exact_duplicates": 876,
+    "exclusions": {
+      "conflicting_raw_labels": 12,
+      "identical_content_duplicates": 0,
+      "near_duplicate_cross_split": 1109,
+      "unsupported_or_rare_class_images": 0
+    },
+    "rare_training_classes": [],
+    "counts": {
+      "dish_train": 2934,
+      "dish_valid": 354,
+      "dish_test": 379,
+      "raw_train": 8242,
+      "raw_valid": 1210,
+      "raw_test": 1215
+    },
+    "class_counts": {
+      "adhirasam": {
+        "train": 31,
+        "valid": 2,
+        "test": 3
+      },
+      "aloo gobi": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "aloo matar": {
+        "train": 39,
+        "valid": 3,
+        "test": 5
+      },
+      "aloo methi": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "aloo shimla mirch": {
+        "train": 35,
+        "valid": 4,
+        "test": 6
+      },
+      "aloo tikki": {
+        "train": 38,
+        "valid": 4,
+        "test": 5
+      },
+      "amaranth": {
+        "train": 30,
+        "valid": 5,
+        "test": 4
+      },
+      "anarsa": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "appe": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "apple": {
+        "train": 525,
+        "valid": 70,
+        "test": 71
+      },
+      "apple juice": {
+        "train": 123,
+        "valid": 16,
+        "test": 15
+      },
+      "ariselu": {
+        "train": 38,
+        "valid": 4,
+        "test": 5
+      },
+      "asparagus": {
+        "train": 28,
+        "valid": 4,
+        "test": 3
+      },
+      "avocado": {
+        "train": 65,
+        "valid": 8,
+        "test": 8
+      },
+      "baati": {
+        "train": 28,
+        "valid": 3,
+        "test": 3
+      },
+      "banana": {
+        "train": 152,
+        "valid": 22,
+        "test": 23
+      },
+      "bandar laddu": {
+        "train": 35,
+        "valid": 4,
+        "test": 4
+      },
+      "basundi": {
+        "train": 38,
+        "valid": 4,
+        "test": 4
+      },
+      "beetroot": {
+        "train": 115,
+        "valid": 21,
+        "test": 21
+      },
+      "bell pepper": {
+        "train": 471,
+        "valid": 71,
+        "test": 76
+      },
+      "bhatura": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "bhindi masala": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "biryani": {
+        "train": 40,
+        "valid": 5,
+        "test": 5
+      },
+      "bitter gourd": {
+        "train": 64,
+        "valid": 8,
+        "test": 8
+      },
+      "blueberry": {
+        "train": 26,
+        "valid": 4,
+        "test": 3
+      },
+      "blueberry soy yogurt": {
+        "train": 22,
+        "valid": 3,
+        "test": 3
+      },
+      "blueberry soyghurt": {
+        "train": 22,
+        "valid": 3,
+        "test": 3
+      },
+      "boondi": {
+        "train": 40,
+        "valid": 5,
+        "test": 5
+      },
+      "bottle gourd": {
+        "train": 62,
+        "valid": 8,
+        "test": 8
+      },
+      "broccoli": {
+        "train": 64,
+        "valid": 8,
+        "test": 8
+      },
+      "butter chicken": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "cabbage": {
+        "train": 133,
+        "valid": 21,
+        "test": 21
+      },
+      "cantaloupe": {
+        "train": 18,
+        "valid": 3,
+        "test": 3
+      },
+      "carrot": {
+        "train": 167,
+        "valid": 25,
+        "test": 24
+      },
+      "cauliflower": {
+        "train": 87,
+        "valid": 16,
+        "test": 15
+      },
+      "chak hao kheer": {
+        "train": 33,
+        "valid": 5,
+        "test": 4
+      },
+      "cham cham": {
+        "train": 38,
+        "valid": 3,
+        "test": 3
+      },
+      "chana masala": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "chapati": {
+        "train": 38,
+        "valid": 5,
+        "test": 6
+      },
+      "chicken rezala": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "chicken tikka": {
+        "train": 26,
+        "valid": 3,
+        "test": 4
+      },
+      "chicken tikka masala": {
+        "train": 35,
+        "valid": 5,
+        "test": 5
+      },
+      "chikki": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "chili pepper": {
+        "train": 104,
+        "valid": 16,
+        "test": 17
+      },
+      "churma": {
+        "train": 5,
+        "valid": 1,
+        "test": 1
+      },
+      "coconut": {
+        "train": 19,
+        "valid": 4,
+        "test": 3
+      },
+      "corn": {
+        "train": 182,
+        "valid": 34,
+        "test": 35
+      },
+      "cucumber": {
+        "train": 148,
+        "valid": 22,
+        "test": 24
+      },
+      "daal": {
+        "train": 4,
+        "valid": 0,
+        "test": 1
+      },
+      "daal puri": {
+        "train": 38,
+        "valid": 5,
+        "test": 3
+      },
+      "dal makhani": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "dal tadka": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "dharwad pedha": {
+        "train": 38,
+        "valid": 3,
+        "test": 3
+      },
+      "doodhpak": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "double ka meetha": {
+        "train": 39,
+        "valid": 4,
+        "test": 5
+      },
+      "dragon fruit": {
+        "train": 47,
+        "valid": 8,
+        "test": 7
+      },
+      "dum aloo": {
+        "train": 35,
+        "valid": 4,
+        "test": 6
+      },
+      "eggplant": {
+        "train": 128,
+        "valid": 20,
+        "test": 21
+      },
+      "fig": {
+        "train": 17,
+        "valid": 3,
+        "test": 3
+      },
+      "gajar halwa": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "garlic": {
+        "train": 143,
+        "valid": 20,
+        "test": 23
+      },
+      "gavvalu": {
+        "train": 36,
+        "valid": 4,
+        "test": 4
+      },
+      "ghevar": {
+        "train": 39,
+        "valid": 4,
+        "test": 5
+      },
+      "ginger": {
+        "train": 105,
+        "valid": 15,
+        "test": 16
+      },
+      "golden grapefruit juice": {
+        "train": 20,
+        "valid": 3,
+        "test": 2
+      },
+      "grapefruit juice": {
+        "train": 42,
+        "valid": 5,
+        "test": 5
+      },
+      "grapes": {
+        "train": 110,
+        "valid": 18,
+        "test": 20
+      },
+      "gujia": {
+        "train": 33,
+        "valid": 4,
+        "test": 5
+      },
+      "gulab jamun": {
+        "train": 41,
+        "valid": 4,
+        "test": 5
+      },
+      "imarti": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "jalapeno": {
+        "train": 98,
+        "valid": 16,
+        "test": 17
+      },
+      "jalebi": {
+        "train": 53,
+        "valid": 8,
+        "test": 6
+      },
+      "kachori": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "kadai paneer": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "kadhi pakoda": {
+        "train": 40,
+        "valid": 5,
+        "test": 5
+      },
+      "kakinada khaja": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "kalakand": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "karela bharta": {
+        "train": 35,
+        "valid": 4,
+        "test": 5
+      },
+      "kheer": {
+        "train": 28,
+        "valid": 2,
+        "test": 4
+      },
+      "kiwi": {
+        "train": 171,
+        "valid": 23,
+        "test": 26
+      },
+      "kofta": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "lassi": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "ledikeni": {
+        "train": 36,
+        "valid": 4,
+        "test": 5
+      },
+      "leek": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "lemon": {
+        "train": 159,
+        "valid": 23,
+        "test": 25
+      },
+      "lettuce": {
+        "train": 73,
+        "valid": 10,
+        "test": 9
+      },
+      "lime": {
+        "train": 48,
+        "valid": 7,
+        "test": 6
+      },
+      "litti chokha": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "lyangcha": {
+        "train": 32,
+        "valid": 4,
+        "test": 5
+      },
+      "maach jhol": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "makki di roti sarso ka saag": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "malpua": {
+        "train": 34,
+        "valid": 3,
+        "test": 3
+      },
+      "mandarin juice": {
+        "train": 32,
+        "valid": 4,
+        "test": 4
+      },
+      "mango": {
+        "train": 138,
+        "valid": 22,
+        "test": 23
+      },
+      "melon": {
+        "train": 242,
+        "valid": 33,
+        "test": 32
+      },
+      "milk": {
+        "train": 298,
+        "valid": 37,
+        "test": 37
+      },
+      "misi roti": {
+        "train": 37,
+        "valid": 4,
+        "test": 5
+      },
+      "misti doi": {
+        "train": 35,
+        "valid": 4,
+        "test": 5
+      },
+      "mixed juice": {
+        "train": 40,
+        "valid": 5,
+        "test": 5
+      },
+      "modak": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "mushroom": {
+        "train": 35,
+        "valid": 5,
+        "test": 4
+      },
+      "mysore pak": {
+        "train": 37,
+        "valid": 4,
+        "test": 5
+      },
+      "naan": {
+        "train": 39,
+        "valid": 4,
+        "test": 5
+      },
+      "natural low fat yogurt": {
+        "train": 21,
+        "valid": 3,
+        "test": 2
+      },
+      "natural yogurt": {
+        "train": 34,
+        "valid": 4,
+        "test": 4
+      },
+      "navrattan korma": {
+        "train": 37,
+        "valid": 4,
+        "test": 5
+      },
+      "nectarine": {
+        "train": 57,
+        "valid": 7,
+        "test": 7
+      },
+      "oat milk": {
+        "train": 54,
+        "valid": 7,
+        "test": 7
+      },
+      "oat yogurt": {
+        "train": 26,
+        "valid": 4,
+        "test": 3
+      },
+      "oatghurt": {
+        "train": 28,
+        "valid": 4,
+        "test": 3
+      },
+      "okra": {
+        "train": 22,
+        "valid": 3,
+        "test": 2
+      },
+      "onion": {
+        "train": 154,
+        "valid": 27,
+        "test": 26
+      },
+      "orange": {
+        "train": 166,
+        "valid": 24,
+        "test": 25
+      },
+      "orange juice": {
+        "train": 94,
+        "valid": 12,
+        "test": 12
+      },
+      "orange red grapefruit juice": {
+        "train": 21,
+        "valid": 3,
+        "test": 2
+      },
+      "palak paneer": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "paneer butter masala": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "papaya": {
+        "train": 34,
+        "valid": 4,
+        "test": 4
+      },
+      "passion fruit": {
+        "train": 42,
+        "valid": 6,
+        "test": 6
+      },
+      "peach": {
+        "train": 57,
+        "valid": 8,
+        "test": 8
+      },
+      "pear": {
+        "train": 271,
+        "valid": 39,
+        "test": 40
+      },
+      "peas": {
+        "train": 103,
+        "valid": 18,
+        "test": 20
+      },
+      "phirni": {
+        "train": 38,
+        "valid": 4,
+        "test": 5
+      },
+      "pineapple": {
+        "train": 153,
+        "valid": 23,
+        "test": 25
+      },
+      "pithe": {
+        "train": 38,
+        "valid": 3,
+        "test": 3
+      },
+      "plum": {
+        "train": 35,
+        "valid": 5,
+        "test": 4
+      },
+      "poha": {
+        "train": 34,
+        "valid": 5,
+        "test": 5
+      },
+      "pomegranate": {
+        "train": 130,
+        "valid": 19,
+        "test": 21
+      },
+      "poornalu": {
+        "train": 39,
+        "valid": 4,
+        "test": 5
+      },
+      "pootharekulu": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "potato": {
+        "train": 206,
+        "valid": 31,
+        "test": 31
+      },
+      "pumpkin": {
+        "train": 64,
+        "valid": 8,
+        "test": 8
+      },
+      "qubani ka meetha": {
+        "train": 36,
+        "valid": 4,
+        "test": 5
+      },
+      "rabri": {
+        "train": 38,
+        "valid": 4,
+        "test": 5
+      },
+      "radish": {
+        "train": 89,
+        "valid": 16,
+        "test": 15
+      },
+      "ras malai": {
+        "train": 39,
+        "valid": 5,
+        "test": 4
+      },
+      "rasgulla": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "raspberry": {
+        "train": 57,
+        "valid": 9,
+        "test": 8
+      },
+      "red grapefruit": {
+        "train": 53,
+        "valid": 8,
+        "test": 7
+      },
+      "red grapefruit juice": {
+        "train": 24,
+        "valid": 3,
+        "test": 3
+      },
+      "ridge gourd": {
+        "train": 66,
+        "valid": 10,
+        "test": 9
+      },
+      "sandesh": {
+        "train": 37,
+        "valid": 4,
+        "test": 4
+      },
+      "satsuma": {
+        "train": 110,
+        "valid": 14,
+        "test": 14
+      },
+      "shankarpali": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "sheera": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "shrikhand": {
+        "train": 38,
+        "valid": 5,
+        "test": 5
+      },
+      "soan papdi": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "sohan halwa": {
+        "train": 37,
+        "valid": 5,
+        "test": 5
+      },
+      "sour cream": {
+        "train": 75,
+        "valid": 9,
+        "test": 9
+      },
+      "sour milk": {
+        "train": 39,
+        "valid": 5,
+        "test": 5
+      },
+      "soy milk": {
+        "train": 94,
+        "valid": 12,
+        "test": 12
+      },
+      "soybean": {
+        "train": 109,
+        "valid": 20,
+        "test": 19
+      },
+      "soyghurt": {
+        "train": 8,
+        "valid": 1,
+        "test": 1
+      },
+      "spinach": {
+        "train": 98,
+        "valid": 19,
+        "test": 19
+      },
+      "spiny gourd": {
+        "train": 31,
+        "valid": 6,
+        "test": 5
+      },
+      "sponge gourd": {
+        "train": 51,
+        "valid": 7,
+        "test": 6
+      },
+      "strawberry": {
+        "train": 54,
+        "valid": 8,
+        "test": 7
+      },
+      "strawberry yogurt": {
+        "train": 52,
+        "valid": 6,
+        "test": 6
+      },
+      "sutar feni": {
+        "train": 39,
+        "valid": 4,
+        "test": 5
+      },
+      "sweet potato": {
+        "train": 76,
+        "valid": 13,
+        "test": 13
+      },
+      "tomato": {
+        "train": 296,
+        "valid": 41,
+        "test": 42
+      },
+      "turnip": {
+        "train": 104,
+        "valid": 18,
+        "test": 19
+      },
+      "unni appam": {
+        "train": 36,
+        "valid": 5,
+        "test": 5
+      },
+      "vanilla soy yogurt": {
+        "train": 18,
+        "valid": 3,
+        "test": 2
+      },
+      "vanilla soyghurt": {
+        "train": 14,
+        "valid": 2,
+        "test": 2
+      },
+      "vanilla yogurt": {
+        "train": 126,
+        "valid": 16,
+        "test": 15
+      },
+      "watermelon": {
+        "train": 97,
+        "valid": 15,
+        "test": 17
+      },
+      "yogurt": {
+        "train": 67,
+        "valid": 9,
+        "test": 8
+      },
+      "zucchini": {
+        "train": 51,
+        "valid": 7,
+        "test": 6
+      }
+    },
+    "split_policy": "Keep provided raw train as train; exact-content groups from provided validation are deterministically divided per class into valid/test. Drop exact label conflicts and cross-split same-label pHash distance <=4. Test takes precedence.",
+    "limitations": "Perceptual hashing is a heuristic. It may exclude similar distinct photos and miss near duplicates. Raw test is carved from source validation, not an independent external benchmark."
+  },
+  "cleaned_independent_heads_validation": {
+    "dish": {
+      "images": 354,
+      "top1_accuracy": 0.5254237288135594,
+      "top3_accuracy": 0.7231638418079096
+    },
+    "raw": {
+      "images": 1210,
+      "top1_accuracy": 0.9173553719008265,
+      "top3_accuracy": 0.9727272727272728
+    }
+  },
+  "validation_trials": [
+    {
+      "C": 1,
+      "balanced_domain_macro_validation_accuracy": 0.701403863452688,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.5169491525423728,
+            "top3_accuracy": 0.711864406779661,
+            "macro_top1_accuracy": 0.49760416666666674
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.8892561983471075,
+            "top3_accuracy": 0.9636363636363636,
+            "macro_top1_accuracy": 0.9052035602387093
+          }
+        }
+      },
+      "kind": "deep_svc"
+    },
+    {
+      "C": 3,
+      "balanced_domain_macro_validation_accuracy": 0.7073046891630237,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.519774011299435,
+            "top3_accuracy": 0.7146892655367232,
+            "macro_top1_accuracy": 0.4996875000000001
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9099173553719008,
+            "top3_accuracy": 0.9694214876033058,
+            "macro_top1_accuracy": 0.9149218783260473
+          }
+        }
+      },
+      "kind": "deep_svc"
+    },
+    {
+      "C": 10,
+      "balanced_domain_macro_validation_accuracy": 0.7055506294069296,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.519774011299435,
+            "top3_accuracy": 0.7146892655367232,
+            "macro_top1_accuracy": 0.4996875000000001
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9115702479338843,
+            "top3_accuracy": 0.968595041322314,
+            "macro_top1_accuracy": 0.911413758813859
+          }
+        }
+      },
+      "kind": "deep_svc"
+    },
+    {
+      "kind": "hierarchical_svc",
+      "C": 3,
+      "routing_threshold": 0.3,
+      "balanced_domain_macro_validation_accuracy": 0.7008717065258732,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.5056497175141242,
+            "top3_accuracy": 0.7090395480225988,
+            "macro_top1_accuracy": 0.4871875
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9115702479338843,
+            "top3_accuracy": 0.968595041322314,
+            "macro_top1_accuracy": 0.9145559130517462
+          }
+        }
+      }
+    },
+    {
+      "kind": "hierarchical_svc",
+      "C": 3,
+      "routing_threshold": 0.5,
+      "balanced_domain_macro_validation_accuracy": 0.7052691104430941,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.5169491525423728,
+            "top3_accuracy": 0.7090395480225988,
+            "macro_top1_accuracy": 0.4984375
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9090909090909091,
+            "top3_accuracy": 0.968595041322314,
+            "macro_top1_accuracy": 0.9121007208861882
+          }
+        }
+      }
+    },
+    {
+      "kind": "hierarchical_svc",
+      "C": 3,
+      "routing_threshold": 0.7,
+      "balanced_domain_macro_validation_accuracy": 0.7040443025556067,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.519774011299435,
+            "top3_accuracy": 0.7090395480225988,
+            "macro_top1_accuracy": 0.5009375
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9049586776859504,
+            "top3_accuracy": 0.9669421487603306,
+            "macro_top1_accuracy": 0.9071511051112133
+          }
+        }
+      }
+    },
+    {
+      "kind": "hierarchical_svc",
+      "C": 3,
+      "routing_threshold": 0.85,
+      "balanced_domain_macro_validation_accuracy": 0.7015361252490423,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.519774011299435,
+            "top3_accuracy": 0.7146892655367232,
+            "macro_top1_accuracy": 0.5009375
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.9008264462809917,
+            "top3_accuracy": 0.9636363636363636,
+            "macro_top1_accuracy": 0.9021347504980846
+          }
+        }
+      }
+    },
+    {
+      "kind": "hierarchical_svc",
+      "C": 3,
+      "routing_threshold": 0.95,
+      "balanced_domain_macro_validation_accuracy": 0.6994164091676327,
+      "domains": {
+        "dish": {
+          "raw": {
+            "images": 354,
+            "top1_accuracy": 0.519774011299435,
+            "top3_accuracy": 0.7146892655367232,
+            "macro_top1_accuracy": 0.5009375
+          }
+        },
+        "raw": {
+          "raw": {
+            "images": 1210,
+            "top1_accuracy": 0.8950413223140495,
+            "top3_accuracy": 0.9570247933884297,
+            "macro_top1_accuracy": 0.8978953183352654
+          }
+        }
+      }
+    }
+  ],
+  "selected": {
+    "C": 3,
+    "balanced_domain_macro_validation_accuracy": 0.7073046891630237,
+    "domains": {
+      "dish": {
+        "raw": {
+          "images": 354,
+          "top1_accuracy": 0.519774011299435,
+          "top3_accuracy": 0.7146892655367232,
+          "macro_top1_accuracy": 0.4996875000000001
+        }
+      },
+      "raw": {
+        "raw": {
+          "images": 1210,
+          "top1_accuracy": 0.9099173553719008,
+          "top3_accuracy": 0.9694214876033058,
+          "macro_top1_accuracy": 0.9149218783260473
+        }
+      }
+    },
+    "kind": "deep_svc"
+  },
+  "validation": {
+    "dish": {
+      "raw": {
+        "images": 354,
+        "top1_accuracy": 0.519774011299435,
+        "top3_accuracy": 0.7146892655367232,
+        "macro_top1_accuracy": 0.4996875000000001
+      },
+      "selective": {
+        "images": 354,
+        "accepted_images": 202,
+        "coverage": 0.5706214689265536,
+        "accepted_top1_accuracy": 0.7029702970297029,
+        "accepted_errors": 60,
+        "rejected_images": 152
+      }
+    },
+    "raw": {
+      "raw": {
+        "images": 1210,
+        "top1_accuracy": 0.9099173553719008,
+        "top3_accuracy": 0.9694214876033058,
+        "macro_top1_accuracy": 0.9149218783260473
+      },
+      "selective": {
+        "images": 1210,
+        "accepted_images": 1084,
+        "coverage": 0.8958677685950414,
+        "accepted_top1_accuracy": 0.9520295202952029,
+        "accepted_errors": 52,
+        "rejected_images": 126
+      }
+    }
+  },
+  "test": {
+    "dish": {
+      "raw": {
+        "images": 379,
+        "top1_accuracy": 0.5514511873350924,
+        "top3_accuracy": 0.7757255936675461,
+        "macro_top1_accuracy": 0.5508230452674897
+      },
+      "selective": {
+        "images": 379,
+        "accepted_images": 227,
+        "coverage": 0.5989445910290238,
+        "accepted_top1_accuracy": 0.7092511013215859,
+        "accepted_errors": 66,
+        "rejected_images": 152
+      }
+    },
+    "raw": {
+      "raw": {
+        "images": 1215,
+        "top1_accuracy": 0.9185185185185185,
+        "top3_accuracy": 0.9720164609053498,
+        "macro_top1_accuracy": 0.9159811322755554
+      },
+      "selective": {
+        "images": 1215,
+        "accepted_images": 1094,
+        "coverage": 0.9004115226337449,
+        "accepted_top1_accuracy": 0.9634369287020109,
+        "accepted_errors": 40,
+        "rejected_images": 121
+      }
+    }
+  },
+  "test_per_class": {
+    "adhirasam": {
+      "images": 3,
+      "top1_accuracy": 0.3333333333333333,
+      "predicted_labels": {
+        "ariselu": 1,
+        "adhirasam": 1,
+        "appe": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.0
+    },
+    "aloo gobi": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "dum aloo": 1,
+        "chicken tikka masala": 2,
+        "aloo gobi": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "aloo matar": {
+      "images": 5,
+      "top1_accuracy": 0.2,
+      "predicted_labels": {
+        "chana masala": 1,
+        "double ka meetha": 1,
+        "paneer butter masala": 1,
+        "aloo gobi": 1,
+        "aloo matar": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.0
+    },
+    "aloo methi": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "karela bharta": 1,
+        "palak paneer": 1,
+        "kadai paneer": 1,
+        "aloo methi": 2
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "aloo shimla mirch": {
+      "images": 6,
+      "top1_accuracy": 0.6666666666666666,
+      "predicted_labels": {
+        "aloo shimla mirch": 4,
+        "aloo gobi": 1,
+        "aloo matar": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "aloo tikki": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "karela bharta": 1,
+        "appe": 1,
+        "kadai paneer": 1,
+        "aloo tikki": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "amaranth": {
+      "images": 4,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "amaranth": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "anarsa": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "malpua": 1,
+        "ginger": 1,
+        "unni appam": 1,
+        "anarsa": 2
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.0
+    },
+    "appe": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "appe": 3,
+        "unni appam": 1,
+        "gulab jamun": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "apple": {
+      "images": 71,
+      "top1_accuracy": 0.9436619718309859,
+      "predicted_labels": {
+        "apple": 67,
+        "tomato": 2,
+        "nectarine": 1,
+        "beetroot": 1
+      },
+      "accepted_images": 66,
+      "accepted_top1_accuracy": 0.9545454545454546
+    },
+    "apple juice": {
+      "images": 15,
+      "top1_accuracy": 0.9333333333333333,
+      "predicted_labels": {
+        "apple juice": 14,
+        "orange juice": 1
+      },
+      "accepted_images": 14,
+      "accepted_top1_accuracy": 1.0
+    },
+    "ariselu": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "ariselu": 4,
+        "jalebi": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "asparagus": {
+      "images": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "predicted_labels": {
+        "asparagus": 2,
+        "carrot": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "avocado": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "avocado": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "baati": {
+      "images": 3,
+      "top1_accuracy": 0.3333333333333333,
+      "predicted_labels": {
+        "litti chokha": 2,
+        "baati": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "banana": {
+      "images": 23,
+      "top1_accuracy": 0.8695652173913043,
+      "predicted_labels": {
+        "banana": 20,
+        "carrot": 1,
+        "chak hao kheer": 1,
+        "pineapple": 1
+      },
+      "accepted_images": 20,
+      "accepted_top1_accuracy": 1.0
+    },
+    "bandar laddu": {
+      "images": 4,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "bandar laddu": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "basundi": {
+      "images": 4,
+      "top1_accuracy": 0.75,
+      "predicted_labels": {
+        "basundi": 3,
+        "kheer": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "beetroot": {
+      "images": 21,
+      "top1_accuracy": 0.8571428571428571,
+      "predicted_labels": {
+        "beetroot": 18,
+        "radish": 1,
+        "chak hao kheer": 1,
+        "lettuce": 1
+      },
+      "accepted_images": 17,
+      "accepted_top1_accuracy": 0.9411764705882353
+    },
+    "bell pepper": {
+      "images": 76,
+      "top1_accuracy": 0.8947368421052632,
+      "predicted_labels": {
+        "bell pepper": 68,
+        "chili pepper": 3,
+        "jalapeno": 2,
+        "sweet potato": 1,
+        "aloo gobi": 1,
+        "tomato": 1
+      },
+      "accepted_images": 70,
+      "accepted_top1_accuracy": 0.9571428571428572
+    },
+    "bhatura": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "bhatura": 4,
+        "melon": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "bhindi masala": {
+      "images": 5,
+      "top1_accuracy": 0.2,
+      "predicted_labels": {
+        "maach jhol": 1,
+        "bhindi masala": 1,
+        "karela bharta": 2,
+        "aloo shimla mirch": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.25
+    },
+    "biryani": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "poha": 1,
+        "navrattan korma": 1,
+        "chicken tikka masala": 1,
+        "biryani": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "bitter gourd": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "bitter gourd": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "blueberry": {
+      "images": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "predicted_labels": {
+        "grapes": 1,
+        "blueberry": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "blueberry soy yogurt": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "blueberry soy yogurt": 3
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "blueberry soyghurt": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "blueberry soyghurt": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "boondi": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "boondi": 4,
+        "sheera": 1
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 0.8
+    },
+    "bottle gourd": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "bottle gourd": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "broccoli": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "broccoli": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "butter chicken": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "butter chicken": 2,
+        "chicken tikka masala": 2,
+        "paneer butter masala": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.0
+    },
+    "cabbage": {
+      "images": 21,
+      "top1_accuracy": 0.9523809523809523,
+      "predicted_labels": {
+        "cabbage": 20,
+        "lettuce": 1
+      },
+      "accepted_images": 20,
+      "accepted_top1_accuracy": 0.95
+    },
+    "cantaloupe": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "cantaloupe": 3
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "carrot": {
+      "images": 24,
+      "top1_accuracy": 0.9583333333333334,
+      "predicted_labels": {
+        "carrot": 23,
+        "gajar halwa": 1
+      },
+      "accepted_images": 22,
+      "accepted_top1_accuracy": 0.9545454545454546
+    },
+    "cauliflower": {
+      "images": 15,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "cauliflower": 15
+      },
+      "accepted_images": 15,
+      "accepted_top1_accuracy": 1.0
+    },
+    "chak hao kheer": {
+      "images": 4,
+      "top1_accuracy": 0.75,
+      "predicted_labels": {
+        "chak hao kheer": 3,
+        "phirni": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "cham cham": {
+      "images": 3,
+      "top1_accuracy": 0.3333333333333333,
+      "predicted_labels": {
+        "cham cham": 1,
+        "qubani ka meetha": 1,
+        "sohan halwa": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "chana masala": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "chana masala": 3,
+        "chicken tikka masala": 1,
+        "navrattan korma": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.5
+    },
+    "chapati": {
+      "images": 6,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "chapati": 3,
+        "baati": 2,
+        "misi roti": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "chicken rezala": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "chicken rezala": 3,
+        "kalakand": 1,
+        "makki di roti sarso ka saag": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "chicken tikka": {
+      "images": 4,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "chicken tikka": 2,
+        "butter chicken": 1,
+        "chikki": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "chicken tikka masala": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "maach jhol": 1,
+        "chicken tikka masala": 2,
+        "aloo gobi": 1,
+        "butter chicken": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.25
+    },
+    "chikki": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "chikki": 3,
+        "sohan halwa": 1,
+        "ariselu": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.75
+    },
+    "chili pepper": {
+      "images": 17,
+      "top1_accuracy": 0.8823529411764706,
+      "predicted_labels": {
+        "chili pepper": 15,
+        "soybean": 1,
+        "jalapeno": 1
+      },
+      "accepted_images": 16,
+      "accepted_top1_accuracy": 0.9375
+    },
+    "churma": {
+      "images": 1,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "litti chokha": 1
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "coconut": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "coconut": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "corn": {
+      "images": 35,
+      "top1_accuracy": 0.9142857142857143,
+      "predicted_labels": {
+        "corn": 32,
+        "soybean": 2,
+        "karela bharta": 1
+      },
+      "accepted_images": 31,
+      "accepted_top1_accuracy": 1.0
+    },
+    "cucumber": {
+      "images": 24,
+      "top1_accuracy": 0.875,
+      "predicted_labels": {
+        "cucumber": 21,
+        "okra": 1,
+        "lemon": 1,
+        "jalapeno": 1
+      },
+      "accepted_images": 21,
+      "accepted_top1_accuracy": 1.0
+    },
+    "daal": {
+      "images": 1,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "baati": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "daal puri": {
+      "images": 3,
+      "top1_accuracy": 0.3333333333333333,
+      "predicted_labels": {
+        "daal puri": 1,
+        "kachori": 1,
+        "melon": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 0.0
+    },
+    "dal makhani": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "dal makhani": 2,
+        "misti doi": 1,
+        "dal tadka": 1,
+        "litti chokha": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "dal tadka": {
+      "images": 5,
+      "top1_accuracy": 0.2,
+      "predicted_labels": {
+        "dal tadka": 1,
+        "kadhi pakoda": 3,
+        "navrattan korma": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "dharwad pedha": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "dharwad pedha": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "doodhpak": {
+      "images": 5,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "ras malai": 1,
+        "kalakand": 1,
+        "basundi": 2,
+        "sheera": 1
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "double ka meetha": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "double ka meetha": 4,
+        "sheera": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "dragon fruit": {
+      "images": 7,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "dragon fruit": 7
+      },
+      "accepted_images": 6,
+      "accepted_top1_accuracy": 1.0
+    },
+    "dum aloo": {
+      "images": 6,
+      "top1_accuracy": 0.16666666666666666,
+      "predicted_labels": {
+        "chicken tikka masala": 1,
+        "paneer butter masala": 2,
+        "dum aloo": 1,
+        "aloo gobi": 2
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "eggplant": {
+      "images": 21,
+      "top1_accuracy": 0.9523809523809523,
+      "predicted_labels": {
+        "eggplant": 20,
+        "spinach": 1
+      },
+      "accepted_images": 17,
+      "accepted_top1_accuracy": 1.0
+    },
+    "fig": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "fig": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "gajar halwa": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "gajar halwa": 5
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "garlic": {
+      "images": 23,
+      "top1_accuracy": 0.9130434782608695,
+      "predicted_labels": {
+        "garlic": 21,
+        "turnip": 1,
+        "rasgulla": 1
+      },
+      "accepted_images": 18,
+      "accepted_top1_accuracy": 1.0
+    },
+    "gavvalu": {
+      "images": 4,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "gavvalu": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "ghevar": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "ghevar": 2,
+        "double ka meetha": 1,
+        "gajar halwa": 1,
+        "kadhi pakoda": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.5
+    },
+    "ginger": {
+      "images": 16,
+      "top1_accuracy": 0.875,
+      "predicted_labels": {
+        "ginger": 14,
+        "misti doi": 1,
+        "pineapple": 1
+      },
+      "accepted_images": 14,
+      "accepted_top1_accuracy": 1.0
+    },
+    "golden grapefruit juice": {
+      "images": 2,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "golden grapefruit juice": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "grapefruit juice": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "grapefruit juice": 5
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "grapes": {
+      "images": 20,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "grapes": 20
+      },
+      "accepted_images": 20,
+      "accepted_top1_accuracy": 1.0
+    },
+    "gujia": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "gujia": 4,
+        "kakinada khaja": 1
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 0.8
+    },
+    "gulab jamun": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "ledikeni": 3,
+        "gulab jamun": 2
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "imarti": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "pomegranate": 1,
+        "imarti": 3,
+        "jalebi": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "jalapeno": {
+      "images": 17,
+      "top1_accuracy": 0.5882352941176471,
+      "predicted_labels": {
+        "chili pepper": 3,
+        "bell pepper": 3,
+        "jalapeno": 10,
+        "eggplant": 1
+      },
+      "accepted_images": 14,
+      "accepted_top1_accuracy": 0.6428571428571429
+    },
+    "jalebi": {
+      "images": 6,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "adhirasam": 1,
+        "imarti": 2,
+        "jalebi": 3
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.75
+    },
+    "kachori": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "kachori": 2,
+        "sheera": 1,
+        "daal puri": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kadai paneer": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "navrattan korma": 1,
+        "kadai paneer": 3,
+        "kofta": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kadhi pakoda": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "kadhi pakoda": 4,
+        "bhindi masala": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kakinada khaja": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "kakinada khaja": 4,
+        "chikki": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kalakand": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "kalakand": 2,
+        "boondi": 1,
+        "ras malai": 1,
+        "double ka meetha": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "karela bharta": {
+      "images": 5,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "aloo shimla mirch": 1,
+        "lassi": 1,
+        "bhindi masala": 1,
+        "maach jhol": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 0.0
+    },
+    "kheer": {
+      "images": 4,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "kheer": 2,
+        "doodhpak": 1,
+        "sutar feni": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kiwi": {
+      "images": 26,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "kiwi": 26
+      },
+      "accepted_images": 26,
+      "accepted_top1_accuracy": 1.0
+    },
+    "kofta": {
+      "images": 5,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "kachori": 1,
+        "dharwad pedha": 1,
+        "baati": 2,
+        "karela bharta": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 0.0
+    },
+    "lassi": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "lassi": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "ledikeni": {
+      "images": 5,
+      "top1_accuracy": 0.2,
+      "predicted_labels": {
+        "gulab jamun": 3,
+        "pithe": 1,
+        "ledikeni": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.0
+    },
+    "leek": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "leek": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "lemon": {
+      "images": 25,
+      "top1_accuracy": 0.92,
+      "predicted_labels": {
+        "lemon": 23,
+        "melon": 1,
+        "orange": 1
+      },
+      "accepted_images": 24,
+      "accepted_top1_accuracy": 0.9583333333333334
+    },
+    "lettuce": {
+      "images": 9,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "lettuce": 9
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "lime": {
+      "images": 6,
+      "top1_accuracy": 0.8333333333333334,
+      "predicted_labels": {
+        "lime": 5,
+        "peas": 1
+      },
+      "accepted_images": 6,
+      "accepted_top1_accuracy": 0.8333333333333334
+    },
+    "litti chokha": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "litti chokha": 3,
+        "baati": 1,
+        "kachori": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.5
+    },
+    "lyangcha": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "ledikeni": 1,
+        "lyangcha": 3,
+        "sweet potato": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "maach jhol": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "maach jhol": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "makki di roti sarso ka saag": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "makki di roti sarso ka saag": 3,
+        "sutar feni": 1,
+        "phirni": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "malpua": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "malpua": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "mandarin juice": {
+      "images": 4,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "mandarin juice": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "mango": {
+      "images": 23,
+      "top1_accuracy": 0.8695652173913043,
+      "predicted_labels": {
+        "mango": 20,
+        "pear": 2,
+        "lemon": 1
+      },
+      "accepted_images": 21,
+      "accepted_top1_accuracy": 0.9523809523809523
+    },
+    "melon": {
+      "images": 32,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "melon": 32
+      },
+      "accepted_images": 31,
+      "accepted_top1_accuracy": 1.0
+    },
+    "milk": {
+      "images": 37,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "milk": 37
+      },
+      "accepted_images": 37,
+      "accepted_top1_accuracy": 1.0
+    },
+    "misi roti": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "soan papdi": 1,
+        "misi roti": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "misti doi": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "misti doi": 5
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "mixed juice": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "mixed juice": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "modak": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "ariselu": 1,
+        "gavvalu": 1,
+        "onion": 1,
+        "modak": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.5
+    },
+    "mushroom": {
+      "images": 4,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "potato": 2,
+        "mushroom": 2
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.5
+    },
+    "mysore pak": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "kalakand": 1,
+        "pootharekulu": 1,
+        "mysore pak": 2,
+        "soan papdi": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "naan": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "naan": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "natural low fat yogurt": {
+      "images": 2,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "natural low fat yogurt": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "natural yogurt": {
+      "images": 4,
+      "top1_accuracy": 0.75,
+      "predicted_labels": {
+        "natural yogurt": 3,
+        "milk": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "navrattan korma": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "paneer butter masala": 1,
+        "navrattan korma": 2,
+        "basundi": 1,
+        "dum aloo": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "nectarine": {
+      "images": 7,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "nectarine": 7
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "oat milk": {
+      "images": 7,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "oat milk": 7
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "oat yogurt": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "oat yogurt": 3
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "oatghurt": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "oatghurt": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "okra": {
+      "images": 2,
+      "top1_accuracy": 0.5,
+      "predicted_labels": {
+        "peas": 1,
+        "okra": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.5
+    },
+    "onion": {
+      "images": 26,
+      "top1_accuracy": 0.8846153846153846,
+      "predicted_labels": {
+        "onion": 23,
+        "chili pepper": 1,
+        "garlic": 2
+      },
+      "accepted_images": 24,
+      "accepted_top1_accuracy": 0.9166666666666666
+    },
+    "orange": {
+      "images": 25,
+      "top1_accuracy": 0.84,
+      "predicted_labels": {
+        "tomato": 1,
+        "orange": 21,
+        "mango": 1,
+        "satsuma": 1,
+        "malpua": 1
+      },
+      "accepted_images": 19,
+      "accepted_top1_accuracy": 0.9473684210526315
+    },
+    "orange juice": {
+      "images": 12,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "orange juice": 12
+      },
+      "accepted_images": 12,
+      "accepted_top1_accuracy": 1.0
+    },
+    "orange red grapefruit juice": {
+      "images": 2,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "orange red grapefruit juice": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "palak paneer": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "biryani": 1,
+        "makki di roti sarso ka saag": 1,
+        "paneer butter masala": 1,
+        "palak paneer": 2
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.5
+    },
+    "paneer butter masala": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "bhindi masala": 1,
+        "paneer butter masala": 3,
+        "kadai paneer": 1
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "papaya": {
+      "images": 4,
+      "top1_accuracy": 0.75,
+      "predicted_labels": {
+        "papaya": 3,
+        "lemon": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "passion fruit": {
+      "images": 6,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "passion fruit": 6
+      },
+      "accepted_images": 6,
+      "accepted_top1_accuracy": 1.0
+    },
+    "peach": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "peach": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "pear": {
+      "images": 40,
+      "top1_accuracy": 0.95,
+      "predicted_labels": {
+        "pear": 38,
+        "apple": 1,
+        "lemon": 1
+      },
+      "accepted_images": 38,
+      "accepted_top1_accuracy": 0.9736842105263158
+    },
+    "peas": {
+      "images": 20,
+      "top1_accuracy": 0.95,
+      "predicted_labels": {
+        "spinach": 1,
+        "peas": 19
+      },
+      "accepted_images": 16,
+      "accepted_top1_accuracy": 1.0
+    },
+    "phirni": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "kheer": 1,
+        "dal tadka": 1,
+        "ras malai": 1,
+        "phirni": 2
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "pineapple": {
+      "images": 25,
+      "top1_accuracy": 0.96,
+      "predicted_labels": {
+        "pineapple": 24,
+        "milk": 1
+      },
+      "accepted_images": 23,
+      "accepted_top1_accuracy": 1.0
+    },
+    "pithe": {
+      "images": 3,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "shankarpali": 1,
+        "maach jhol": 1,
+        "cham cham": 1
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "plum": {
+      "images": 4,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "plum": 4
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "poha": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "aloo gobi": 2,
+        "poha": 2,
+        "boondi": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.3333333333333333
+    },
+    "pomegranate": {
+      "images": 21,
+      "top1_accuracy": 0.9523809523809523,
+      "predicted_labels": {
+        "pomegranate": 20,
+        "gulab jamun": 1
+      },
+      "accepted_images": 20,
+      "accepted_top1_accuracy": 1.0
+    },
+    "poornalu": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "poornalu": 4,
+        "appe": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.75
+    },
+    "pootharekulu": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "pootharekulu": 4,
+        "melon": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "potato": {
+      "images": 31,
+      "top1_accuracy": 0.8387096774193549,
+      "predicted_labels": {
+        "potato": 26,
+        "garlic": 1,
+        "mango": 1,
+        "shankarpali": 2,
+        "sweet potato": 1
+      },
+      "accepted_images": 28,
+      "accepted_top1_accuracy": 0.8928571428571429
+    },
+    "pumpkin": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "pumpkin": 8
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "qubani ka meetha": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "qubani ka meetha": 2,
+        "pithe": 1,
+        "double ka meetha": 1,
+        "lyangcha": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 0.0
+    },
+    "rabri": {
+      "images": 5,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "ras malai": 2,
+        "qubani ka meetha": 1,
+        "basundi": 1,
+        "kheer": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.0
+    },
+    "radish": {
+      "images": 15,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "radish": 12,
+        "turnip": 1,
+        "pithe": 1,
+        "apple": 1
+      },
+      "accepted_images": 10,
+      "accepted_top1_accuracy": 1.0
+    },
+    "ras malai": {
+      "images": 4,
+      "top1_accuracy": 0.75,
+      "predicted_labels": {
+        "kadhi pakoda": 1,
+        "ras malai": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "rasgulla": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "rasgulla": 4,
+        "pithe": 1
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "raspberry": {
+      "images": 8,
+      "top1_accuracy": 0.875,
+      "predicted_labels": {
+        "raspberry": 7,
+        "strawberry": 1
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 0.875
+    },
+    "red grapefruit": {
+      "images": 7,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "red grapefruit": 7
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "red grapefruit juice": {
+      "images": 3,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "red grapefruit juice": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "ridge gourd": {
+      "images": 9,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "ridge gourd": 9
+      },
+      "accepted_images": 8,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sandesh": {
+      "images": 4,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "mysore pak": 1,
+        "navrattan korma": 1,
+        "rasgulla": 1,
+        "sweet potato": 1
+      },
+      "accepted_images": 0,
+      "accepted_top1_accuracy": null
+    },
+    "satsuma": {
+      "images": 14,
+      "top1_accuracy": 0.9285714285714286,
+      "predicted_labels": {
+        "satsuma": 13,
+        "red grapefruit": 1
+      },
+      "accepted_images": 10,
+      "accepted_top1_accuracy": 1.0
+    },
+    "shankarpali": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "shankarpali": 5
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sheera": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "sheera": 3,
+        "kofta": 1,
+        "kalakand": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 0.5
+    },
+    "shrikhand": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "lemon": 1,
+        "basundi": 1,
+        "shrikhand": 3
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.5
+    },
+    "soan papdi": {
+      "images": 5,
+      "top1_accuracy": 0.6,
+      "predicted_labels": {
+        "mysore pak": 1,
+        "kalakand": 1,
+        "soan papdi": 3
+      },
+      "accepted_images": 3,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sohan halwa": {
+      "images": 5,
+      "top1_accuracy": 0.4,
+      "predicted_labels": {
+        "sohan halwa": 2,
+        "chikki": 2,
+        "biryani": 1
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sour cream": {
+      "images": 9,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "sour cream": 9
+      },
+      "accepted_images": 9,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sour milk": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "sour milk": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "soy milk": {
+      "images": 12,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "soy milk": 12
+      },
+      "accepted_images": 11,
+      "accepted_top1_accuracy": 1.0
+    },
+    "soybean": {
+      "images": 19,
+      "top1_accuracy": 0.7894736842105263,
+      "predicted_labels": {
+        "pear": 1,
+        "soybean": 15,
+        "peas": 3
+      },
+      "accepted_images": 13,
+      "accepted_top1_accuracy": 0.9230769230769231
+    },
+    "soyghurt": {
+      "images": 1,
+      "top1_accuracy": 0.0,
+      "predicted_labels": {
+        "soy milk": 1
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 0.0
+    },
+    "spinach": {
+      "images": 19,
+      "top1_accuracy": 0.7894736842105263,
+      "predicted_labels": {
+        "spinach": 15,
+        "lettuce": 2,
+        "cabbage": 2
+      },
+      "accepted_images": 14,
+      "accepted_top1_accuracy": 1.0
+    },
+    "spiny gourd": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "spiny gourd": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sponge gourd": {
+      "images": 6,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "sponge gourd": 6
+      },
+      "accepted_images": 6,
+      "accepted_top1_accuracy": 1.0
+    },
+    "strawberry": {
+      "images": 7,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "strawberry": 7
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "strawberry yogurt": {
+      "images": 6,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "strawberry yogurt": 6
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sutar feni": {
+      "images": 5,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "sutar feni": 5
+      },
+      "accepted_images": 5,
+      "accepted_top1_accuracy": 1.0
+    },
+    "sweet potato": {
+      "images": 13,
+      "top1_accuracy": 0.6923076923076923,
+      "predicted_labels": {
+        "karela bharta": 1,
+        "sweet potato": 9,
+        "potato": 2,
+        "lyangcha": 1
+      },
+      "accepted_images": 9,
+      "accepted_top1_accuracy": 0.8888888888888888
+    },
+    "tomato": {
+      "images": 42,
+      "top1_accuracy": 0.9761904761904762,
+      "predicted_labels": {
+        "tomato": 41,
+        "mango": 1
+      },
+      "accepted_images": 40,
+      "accepted_top1_accuracy": 1.0
+    },
+    "turnip": {
+      "images": 19,
+      "top1_accuracy": 0.631578947368421,
+      "predicted_labels": {
+        "turnip": 12,
+        "radish": 2,
+        "beetroot": 4,
+        "onion": 1
+      },
+      "accepted_images": 18,
+      "accepted_top1_accuracy": 0.6666666666666666
+    },
+    "unni appam": {
+      "images": 5,
+      "top1_accuracy": 0.8,
+      "predicted_labels": {
+        "unni appam": 4,
+        "ledikeni": 1
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 0.75
+    },
+    "vanilla soy yogurt": {
+      "images": 2,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "vanilla soy yogurt": 2
+      },
+      "accepted_images": 2,
+      "accepted_top1_accuracy": 1.0
+    },
+    "vanilla soyghurt": {
+      "images": 2,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "vanilla soyghurt": 2
+      },
+      "accepted_images": 1,
+      "accepted_top1_accuracy": 1.0
+    },
+    "vanilla yogurt": {
+      "images": 15,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "vanilla yogurt": 15
+      },
+      "accepted_images": 14,
+      "accepted_top1_accuracy": 1.0
+    },
+    "watermelon": {
+      "images": 17,
+      "top1_accuracy": 0.8823529411764706,
+      "predicted_labels": {
+        "watermelon": 15,
+        "mango": 2
+      },
+      "accepted_images": 17,
+      "accepted_top1_accuracy": 0.8823529411764706
+    },
+    "yogurt": {
+      "images": 8,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "yogurt": 8
+      },
+      "accepted_images": 7,
+      "accepted_top1_accuracy": 1.0
+    },
+    "zucchini": {
+      "images": 6,
+      "top1_accuracy": 1.0,
+      "predicted_labels": {
+        "zucchini": 6
+      },
+      "accepted_images": 4,
+      "accepted_top1_accuracy": 1.0
+    }
+  },
+  "rejection": {
+    "correctness_threshold": 0.5,
+    "domain_thresholds": [
+      0.5,
+      0.5
+    ],
+    "distance_limit": 1.1468912760036287,
+    "training_oof_top1_accuracy": 0.839924838940587,
+    "validation_brier": 0.13850200982233732,
+    "policy": "Validation-only shared threshold (minimum 50% estimate, >=15 accepted examples and >=70% accepted accuracy in each domain); require center stability and training novelty distance."
+  },
+  "encoder": {
+    "name": "Frozen MobileNetV2",
+    "sha256": "c0c3f76d93fa3fd6580652a45618618a220fced18babf65774ed169de0432ad5",
+    "dimensions": 1280
+  },
+  "selection": "Mean of raw-food and dish macro class validation accuracy; training-only 3-fold correctness calibration. Test not used for fitting, model selection or threshold selection in this run.",
+  "limitations": "Single dominant-item classification; no ingredient segmentation. Both raw and dish test splits have been inspected across development rounds and are not fresh external blind benchmarks. Source annotations are classification labels, not boxes or masks. Dataset does not provide ingredient nutrition.",
+  "features_fingerprint": "f7e0bfdc101add3ed318d9faec8b73edd4a619d6c1f9f7e22da7943577585194",
+  "joint_signature": "078ed5e18186c7b239a0cf7ee8b51c4b30e862d8524521ab3f779925e415be10",
+  "verification": {
+    "unit_tests_passed": 26,
+    "saved_model_milk_inference": true,
+    "milk_image_search_handler": true,
+    "raw_confirmation_and_name_search_routing": true,
+    "synthetic_white_liquid_pan": "uncertain; no automatic dish or ingredient profile",
+    "original_user_milk_photo_tested": false,
+    "browser_visual_check": false
+  }
+}

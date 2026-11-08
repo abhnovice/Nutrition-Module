@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "training_images": 3087,
+  "classes": 81,
+  "validation_trials": [
+    {
+      "kind": "extra_trees",
+      "C": 10,
+      "images": 360,
+      "top1_accuracy": 0.2861111111111111,
+      "top3_accuracy": 0.3638888888888889
+    },
+    {
+      "kind": "svc",
+      "C": 1,
+      "images": 360,
+      "top1_accuracy": 0.24166666666666667,
+      "top3_accuracy": 0.33055555555555555
+    },
+    {
+      "kind": "svc",
+      "C": 10,
+      "images": 360,
+      "top1_accuracy": 0.3,
+      "top3_accuracy": 0.37777777777777777
+    },
+    {
+      "kind": "svc",
+      "C": 100,
+      "images": 360,
+      "top1_accuracy": 0.3,
+      "top3_accuracy": 0.37777777777777777
+    }
+  ],
+  "selected": {
+    "kind": "svc",
+    "C": 10,
+    "images": 360,
+    "top1_accuracy": 0.3,
+    "top3_accuracy": 0.37777777777777777
+  },
+  "test": {
+    "images": 379,
+    "top1_accuracy": 0.2928759894459103,
+    "top3_accuracy": 0.40369393139841686
+  },
+  "split_audit": {
+    "train_valid": {
+      "shared_source_names": 0,
+      "identical_decoded_images": 0
+    },
+    "train_test": {
+      "shared_source_names": 0,
+      "identical_decoded_images": 0
+    },
+    "valid_test": {
+      "shared_source_names": 0,
+      "identical_decoded_images": 0
+    }
+  },
+  "selection": "Highest validation top-1; train-only fit; test held out.",
+  "method": "Full-image color/spatial/gradient features with validation-selected classifier.",
+  "limitations": "Single dominant-food classification, not bounding-box detection. Votes are uncalibrated. Audit does not detect all near duplicates."
+}

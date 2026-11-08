@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fitness Journal · Food test</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f1;color:#20352d;font:16px system-ui,sans-serif}main{max-width:850px;margin:7vh auto;padding:28px}section{background:white;border:1px solid #d9e2d8;border-radius:20px;padding:32px}h1{font-size:34px;margin:8px 0}p{line-height:1.6;color:#56685e}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:#418365}label{display:block;margin:18px 0 8px;font-weight:600}input,button{font:inherit;border-radius:9px;padding:13px;border:1px solid #b9cabe}input[type=text]{width:100%}input[type=file]{width:100%;background:#f6f8f4}button{background:#235e45;color:white;border:0;margin-top:20px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}article{padding:18px 0;border-top:1px solid #ddd;margin-top:18px}table{width:100%;border-collapse:collapse;font-size:14px}td{padding:7px;border-bottom:1px solid #eee}td:last-child{text-align:right}.grade{display:inline-block;padding:7px 12px;background:#e9f1db;border-radius:8px;font-weight:bold}small{color:#58685f}#status{font-size:14px}#error{color:#a22626}#preview{max-width:200px;max-height:150px;display:none;margin-top:12px}h2{font-size:20px}.ingredient-editor{overflow-x:auto;margin-top:16px}.ingredient-editor input{width:90px;padding:7px}.ingredient-editor input[type=text]{width:155px}.ingredient-editor input[type=checkbox]{width:auto}details{margin:14px 0;padding:12px;border:1px solid #d9e2d8;border-radius:10px}summary{cursor:pointer;font-weight:600}th{font-size:12px;padding:8px}.ingredient-editor td{text-align:left}.ingredient-editor button{padding:8px}.source{font-size:12px;min-width:160px}
+</style>
+<main><section><div class="eyebrow">FITNESS JOURNAL / LOCAL PROTOTYPE</div><h1>What’s on your plate?</h1><p>Test a food name, a product barcode, or a photo. Recognized foods use your local model. Unrecognized photos or names are sent to Google Gemini for closest matches when configured. Barcodes use Barcode Lookup, with nutrition from Open Food Facts when available. Explore likely recipe ingredients, confirm their weights, and build an ingredient nutrition profile.</p>
+<form id="form"><label for="query">Food name or barcode</label><input id="query" type="text" placeholder="Try palak paneer, chapati, or a barcode" maxlength="300"><label for="image">Food or barcode photo (optional)</label><input id="image" type="file" accept="image/*"><img id="preview" alt="Selected photo"><br><button id="submit">Find nutrition</button></form>
+<p id="status" role="status">Checking local model…</p><p><small>Standard Nutri-Score is A–E. Local foods use a separate experimental A–F heuristic. Values are recipe matches, not measurements of your meal. Ingredients are inferred from a suggested recipe; the photo model does not segment individual ingredients.</small></p><div id="error" role="alert"></div><div id="results" aria-live="polite"></div>
+</section></main>
+<script>
+const $=id=>document.getElementById(id);let imageData='',previewUrl;
+const labels={energy_kcal:'Energy (kcal)',energy_kj:'Energy (kJ)',carbohydrate_g:'Carbohydrates (g)',protein_g:'Protein (g)',fat_g:'Fat (g)',saturated_fat_g:'Saturated fat (g)',free_sugar_g:'Free sugar (g)',total_sugar_g:'Total sugar (g)',fibre_g:'Fibre (g)',sodium_mg:'Sodium (mg)'};
+function el(tag,text,parent){const n=document.createElement(tag);n.textContent=text;if(parent)parent.append(n);return n}
+function card(food,parent){const a=el('article','',parent);el('h2',food.name||'Product not found',a);if(food.found===false){el('p',`No product record found for ${food.barcode}.`,a);return}el('small',`${food.source} · ${food.basis}`,a);if(food.is_estimate){el('p','Approximate nutrition · Gemini estimate, not verified package data.',a);if(food.preparation)el('p',food.preparation,a);if(food.assumptions)el('p',food.assumptions,a)}const p=el('p','',a);el('span',food.rating.grade||'Unrated',p).className='grade';el('small',' '+food.rating.system,p);if(food.rating.reason)el('p',food.rating.reason,a);const table=el('table','',a);for(const [key,value]of Object.entries(food.nutrition)){const row=el('tr','',table);el('td',labels[key]||key,row);el('td',value===null?'Not available':(food.is_estimate?'≈ ':'')+String(value),row)}if(food.match_similarity!==undefined)el('small',`Name similarity: ${food.match_similarity} — confirm this recipe.`,a);if(food.source_url){const link=el('a','View product source',a);link.href=food.source_url;link.target='_blank';link.rel='noopener'}if(food.nutrition_source_url){const link=el('a',' · Nutrition source',a);link.href=food.nutrition_source_url;link.target='_blank';link.rel='noopener'}}
+const nutrientKeys=['energy_kcal','protein_g','carbohydrate_g','fat_g','saturated_fat_g','free_sugar_g','fibre_g','sodium_mg'];
+function recipeCards(recipes,parent){
+ for(const recipe of recipes||[]){
+  const detail=el('details','',parent);el('summary',`Ingredient suggestion: ${recipe.name}`,detail);
+  el('p',recipe.inference,detail);el('p',`Recipe quantities (reference only): ${recipe.ingredient_quantities_text}`,detail);
+  if(/^https?:\/\//.test(recipe.source_url)){const a=el('a','Recipe source',detail);a.href=recipe.source_url;a.target='_blank';a.rel='noopener'}
+  el('p','Confirm the recipe, exclude ingredients you did not use, and enter grams. Nutrition inputs are per 100 g. Blank values remain unknown. The workbook lacks many raw ingredient profiles; use values from a suitable ingredient reference or package.',detail);
+  const wrap=el('div','',detail);wrap.className='ingredient-editor';const table=el('table','',wrap);
+  const head=el('tr','',table);for(const title of ['Include','Ingredient','Weight (g)',...nutrientKeys.map(k=>labels[k]),'Reference'])el('th',title,head);
+  const rows=[];
+  function addRow(item){const tr=el('tr','',table);const include=el('input','',el('td','',tr));include.type='checkbox';include.checked=true;include.setAttribute('aria-label',`Include ${item.name}`);
+   const name=el('input','',el('td','',tr));name.type='text';name.value=item.name;name.setAttribute('aria-label','Ingredient name');
+   function numeric(parent,label,value){const input=el('input','',parent);input.type='number';input.min='0';input.step='any';input.value=value===null||value===undefined?'':value;input.setAttribute('aria-label',label);return input}
+   const grams=numeric(el('td','',tr),`Weight in grams for ${item.name}`,null);const nutrients={};
+   for(const k of nutrientKeys)nutrients[k]=numeric(el('td','',tr),`${labels[k]} per 100 g for ${item.name}`,item.nutrition_per_100g[k]);
+   const source=el('td',item.nutrition_record?`${item.nutrition_record} · ${item.source}`:item.source,tr);source.className='source';
+   rows.push({include,name,grams,nutrients});
+  }
+  recipe.ingredients.forEach(addRow);
+  const add=el('button','Add ingredient',detail);add.type='button';add.onclick=()=>addRow({name:'',nutrition_per_100g:{},source:'User-entered values'});
+  const calculate=el('button','Calculate ingredient profile',detail);calculate.type='button';calculate.style.marginLeft='8px';
+  const output=el('div','',detail);output.setAttribute('aria-live','polite');
+  calculate.onclick=async()=>{output.replaceChildren();calculate.disabled=true;try{
+   const ingredients=rows.filter(r=>r.include.checked).map(r=>({name:r.name.value,grams:r.grams.value,nutrition_per_100g:Object.fromEntries(nutrientKeys.map(k=>[k,r.nutrients[k].value])),source:'User-confirmed / edited per-100-g inputs'}));
+   const response=await fetch('/api/ingredients/profile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ingredients})});const profile=await response.json();if(!response.ok)throw Error(profile.error);
+   el('p',`${profile.total_weight_g} g total input weight. ${profile.basis}`,output);
+   const totalTable=el('table','',output);const header=el('tr','',totalTable);for(const title of ['Nutrient','Whole mixture','Per 100 g'])el('th',title,header);
+   for(const k of nutrientKeys){const row=el('tr','',totalTable);el('td',labels[k],row);el('td',profile.total_nutrition[k]===null?'Unknown':String(profile.total_nutrition[k]),row);el('td',profile.nutrition_per_100g[k]===null?'Unknown':String(profile.nutrition_per_100g[k]),row)}
+   el('p',`Rating: ${profile.rating.grade||'Unrated'} · ${profile.rating.system}`,output);
+   if(profile.rating.reason)el('p',profile.rating.reason,output);
+   for(const [k,names]of Object.entries(profile.missing_inputs))el('small',`${labels[k]} missing for: ${names.join(', ')}. `,output);
+   const breakdown=el('details','',output);el('summary','Individual ingredient contributions',breakdown);
+   for(const item of profile.ingredients){el('h3',`${item.name} · ${item.grams} g`,breakdown);const t=el('table','',breakdown);for(const k of nutrientKeys){const r=el('tr','',t);el('td',labels[k],r);el('td',item.contribution[k]===null?'Unknown':String(item.contribution[k]),r)}}
+  }catch(err){el('p',err.message,output)}finally{calculate.disabled=false}};
+ }
+}
+function imageResults(analysis,parent){
+ const panel=el('article','',parent);el('h2',analysis.source==='Google Gemini'?'Closest matches from Gemini':(analysis.status==='uncertain'?'Unrecognized or uncertain food':'Please confirm the food'),panel);
+ el('p',analysis.message,panel);
+ if(analysis.reasons?.length)el('small',analysis.reasons.join(' '),panel);
+ el('p',analysis.probability_note||(analysis.source==='Google Gemini'?'Confirm the suggestion; nutrient values come from a separate lookup.':'Trained foods only; unfamiliar ingredients can still be uncertain.'),panel);
+ for(const candidate of analysis.candidates||[]){
+  const row=el('div','',panel);el('p',`Option ${candidate.rank}: ${candidate.label}${candidate.kind?' · '+candidate.kind:''}`,row);
+  if(candidate.reason)el('small',candidate.reason,row);
+  const button=el('button',`Confirm ${candidate.label}`,row);button.type='button';
+  const profiles=el('div','',row);
+  button.onclick=async()=>{button.disabled=true;profiles.replaceChildren();el('p','Loading nutrition profile…',profiles);try{
+   const response=await fetch('/api/confirm-food',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:candidate.label,confirmation_token:candidate.confirmation_token})});
+   const data=await response.json();if(!response.ok)throw Error(data.error);
+   profiles.replaceChildren();el('p',`You confirmed: ${data.confirmed_label}. Profiles below depend on that confirmation.`,profiles);
+   if(data.nutrition_profile)card(data.nutrition_profile,profiles);else el('p','Nutrition could not be loaded. Confirm again to retry, or enter values below.',profiles);
+   for(const warning of data.warnings||[])el('p',warning,profiles);
+   recipeCards(data.recipe_matches,profiles);if(data.ingredient_suggestion)recipeCards([data.ingredient_suggestion],profiles);
+  }catch(err){profiles.replaceChildren();el('p',err.message,profiles)}finally{button.disabled=false}}
+ }
+}
+$('image').onchange=async()=>{imageData='';$('preview').style.display='none';$('error').textContent='';if(previewUrl)URL.revokeObjectURL(previewUrl);const f=$('image').files[0];if(!f)return;if(f.size>8*1024*1024){$('error').textContent='Choose an image under 8 MB.';$('image').value='';return}imageData=await new Promise((resolve,reject)=>{const r=new FileReader;r.onload=()=>resolve(r.result.split(',')[1]);r.onerror=reject;r.readAsDataURL(f)});previewUrl=URL.createObjectURL(f);$('preview').src=previewUrl;$('preview').style.display='block'};
+$('form').onsubmit=async e=>{e.preventDefault();$('submit').disabled=true;$('results').replaceChildren();$('error').textContent='';$('status').textContent='Searching…';try{const r=await fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:$('query').value,image:imageData})});const data=await r.json();if(!r.ok)throw Error(data.error||'Search failed');for(const w of data.warnings)el('p',w,$('results'));for(const f of data.name_matches)card(f,$('results'));for(const f of data.barcodes)card(f,$('results'));recipeCards(data.recipe_matches,$('results'));if(data.ingredient_suggestion)recipeCards([data.ingredient_suggestion],$('results'));if(data.image_analysis)imageResults(data.image_analysis,$('results'));else if(data.gemini_fallback?.candidates?.length)imageResults(data.gemini_fallback,$('results'));recipeCards([{name:'Your own ingredients',inference:'Enter ingredients you have confirmed yourself.',ingredient_quantities_text:'Enter measured ingredient weights; no quantities are inferred from the photo.',ingredients:[]}],$('results'));$('status').textContent=data.name_matches.length+data.barcodes.length+data.image_candidates.length+(data.recipe_matches||[]).length+(data.ingredient_suggestion?1:0)+(data.gemini_fallback?.candidates?.length||0)?'Search complete. Confirm the food match below.':(data.image_analysis?'Image not recognized reliably. Enter a food name or use your own ingredients.':'No match. Try a different name or a clearer photo.')}catch(err){$('error').textContent=err.message;$('status').textContent='Search could not finish.'}finally{$('submit').disabled=false}};
+fetch('/api/status').then(r=>r.json()).then(s=>$('status').textContent=`${s.foods} nutrition records and ${s.recipes} recipes loaded; ${s.raw_ingredient_classes||0} raw-ingredient image classes. Gemini fallback ${s.gemini_configured?'enabled':'needs an API key'}. Barcode Lookup ${s.barcode_lookup_configured?'enabled':'not configured'}. Image model ${s.model_ready?(s.recognition_refined?'ready with uncertainty rejection':'needs refinement — run python fitness_food.py refine'):'not trained — run python fitness_food.py train'}.`).catch(()=>$('status').textContent='Start the Python server and open http://127.0.0.1:8000.');
+</script></html>
